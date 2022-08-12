@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<h1>Programa calcular IMG</h1>
+
+<script>
+
+    function sartarLinea() {
+        document.write('<br><br><br>')
+    }
+
+    function imprimir(params) {
+        document.write(params)
+        sartarLinea();
+
+    }
+
+    let numeroPensado = Math.round(Math.random() * 10);
+
+    let vidas = 3;
+    let contador = 1;
+
+    while(contador <= vidas){
+
+        let numeroLanzado = parseInt(prompt('Ingrese un numero'));
+        if (numeroLanzado == numeroPensado) {
+            imprimir('Felicidades, ha ganado el juego con el numero ' + numeroPensado);
+            break;
+        } else if (contador < 3){
+            alert('Fallo, le sobran ' + (3-contador) + ' vidas');
+        } else {
+            imprimir('Ha perdido, el numero ganador era ' + numeroPensado);
+        }
+        contador ++;
+        
+    }
+
+</script>

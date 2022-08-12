@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<h1>Promedio</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    let integrantes = parseInt(prompt('¿Cuantos miembros son en la familia?'));
+
+    var totalEdades = 0;
+
+    for (let i = 1; i <= integrantes; i++) {
+        let edad = parseInt(prompt('Ingresa la edad del ' + i + ' integrante de la familia'));
+        totalEdades = totalEdades + edad;
+    }
+
+    let promedio = totalEdades / integrantes;
+
+    imprimir('El promedio es: ' + promedio);
+</script>

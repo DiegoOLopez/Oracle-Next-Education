@@ -1,0 +1,92 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    let color = ['red', 'green', 'blue'];
+    let colorX = 0;
+    for (let j = 0; j < color.length; j++) {
+        pincel.fillStyle = color[j];
+        pincel.beginPath();
+        pincel.fillRect(colorX, 0, 50, 50);
+        pincel.fill();
+        colorX += 50;
+    }
+    
+    function seleccionar(evento) {
+        let x = evento.pageX - pantalla.offsetLeft; 
+        let y = evento.pageY - pantalla.offsetTop; 
+        color = ['red', 'green', 'blue'];
+        if (x < 25 + 25 && x > 25 - 25 && y < 25 + 25 && y > 25 - 25){
+            color = color[0];
+        } else if (x < 75 + 25 && x > 75 - 25 && y < 25 + 25 && y > 25 - 25){
+            color = color [1];
+        } else if (x < 125 + 25 && x > 125 - 25 && y < 25 + 25 && y > 25 - 25){
+            color = color [2];
+        }
+    }
+
+    //Función para delimitar el área
+    function puedeDisenharArea(xCoordenada,yCoordenada){
+        if (xCoordenada >= 0 && (xCoordenada < (3*tamanhoCuadrados+5)) && 
+            (yCoordenada >=0 && yCoordenada < (tamanhoCuadrados+5))) {
+            return false;
+
+        } else{
+        return true;
+    }
+    }   
+
+    pantalla.onclick = seleccionar;
+
+    var puedoDibujar = false;
+
+    function dibujarCirculo(evento) {
+
+        if(puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+    function capturarMovimientoDelMouse(evento){
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if (puedeDisenharArea(x,y)){
+
+                dibujarCirculo(x,y);
+
+        }
+
+    }
+
+    pantalla.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar() {
+
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    }
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+</script>

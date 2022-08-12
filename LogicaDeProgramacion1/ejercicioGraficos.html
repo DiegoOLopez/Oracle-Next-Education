@@ -1,0 +1,56 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    
+    
+    function dibujarRectangulo(x, y, base, altura, color) {
+
+        pincel.fillStyle=color;
+        pincel.fillRect(x,y, base, altura);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+
+    }
+
+    function escribirTexto(x , y, texto) {
+
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText(texto, x, y);   
+
+    }
+
+
+    var serie2009 = [6, 47, 41, 3, 3];
+    var serie2019 = [81, 9, 3, 3, 4];
+
+    var colores = ["blue","green","yellow", "red","gray"];
+
+    /**
+     * Llamar funciones
+     * */
+    let y = 50;
+
+    escribirTexto(50, 40, '2009')
+    for (let i = 0; i <= serie2009.length; i++) {
+        dibujarRectangulo(50, y, 50, serie2009[i], colores[i]);    
+        y = y + serie2009[i];    
+    }
+
+
+    let y2 = 50;
+
+    escribirTexto(150, 40, '2019')
+    for (let j = 0; j <= serie2019.length; j++) {
+        dibujarRectangulo(150, y2, 50, serie2019[j], colores[j]);    
+        y2 = y2 + serie2019[j];    
+    }
+
+
+
+</script>

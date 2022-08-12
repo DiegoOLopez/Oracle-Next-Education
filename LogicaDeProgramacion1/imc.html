@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<h1>Programa calcular IMG</h1>
+
+<script>
+
+    function sartarLinea() {
+        document.write('<br><br><br>')
+    }
+
+    function imprimir(params) {
+        document.write(params)
+        sartarLinea();
+
+    }
+
+
+    function calcularIMC(peso, altura, nombre) {
+        let imc = peso / (altura**2);
+        imprimir('El indice de masa corporal de ' + nombre + ' es de: ' + imc);
+        if (imc < 18.5) {
+            imprimir('Menor de lo recomendado');
+        } else if (imc < 24.9) {
+            imprimir('Normal');
+        } else if (imc < 29.9) {
+            imprimir('Es sobre peso');
+        } else if (imc > 30) {
+            imprimir('IMC considerado como obesidad');
+        }
+    }
+    nombreInformado = prompt('Ingrese su nombre:');
+    pesoInformado = prompt(nombreInformado + ', ingrese su peso:');
+    alturaInformado = prompt(nombreInformado + ', ingrese su altura:');
+
+    let imcCalculado = calcularIMC(pesoInformado, alturaInformado, nombreInformado);
+
+
+</script>

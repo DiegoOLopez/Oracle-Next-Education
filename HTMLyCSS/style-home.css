@@ -1,0 +1,48 @@
+.tituloPrincipal{
+    padding-left: 30px;
+}
+
+img {
+    width: 100%;
+}
+
+.principal {
+    background:#ccc;
+    padding: 20px;
+}
+.tituloCentralizado {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+em strong {
+    color: #570000;
+}
+
+#vision {
+    font-size: 20px;
+}
+
+.diferenciales {
+    background: #fff;
+    padding: 30px;
+}
+
+
+.items {
+    font-style: italic;
+}
+
+ul{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+
+.imagenDiferenciales {
+    width: 50%;
+}

@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<h1>Tabla de multiplicar</h1>
+<script>
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    let tabla = parseInt(prompt('¿Que tabla de multiplar deseas realizar?'));
+    i = 1;
+    while (i <= 10) {
+        imprimir(tabla * i);
+        i ++;
+    }
+
+    imprimir('For');
+
+    for (let i = 1; i <= 10; i++) {   
+        imprimir(tabla * i);     
+    }
+
+</script>

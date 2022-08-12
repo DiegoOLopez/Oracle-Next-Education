@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<h1>Programa calcular IMG</h1>
+
+<script>
+
+    function sartarLinea() {
+        document.write('<br><br><br>')
+    }
+
+    function imprimir(params) {
+        document.write(params)
+        sartarLinea();
+
+    }
+
+
+    let victorias = parseInt(prompt('Informe la cantidad de victorias: '));
+
+    let empates = parseInt(prompt('Informe la cantidad de empates: '));
+
+    puntosTotal = (victorias * 3) + empates;
+
+    imprimir('El total de puntoes es: ' + puntosTotal)
+
+    if (puntosTotal > 28) {
+        imprimir('El equipo esta mejor que el año pasado');
+    }
+
+    if (puntosTotal == 28) {
+        imprimir('El equipo esta igual que el año pasado');
+    }
+
+    if (puntosTotal < 28) {
+        imprimir('El equipo esta peor que el año pasado');
+    }
+    
+
+</script>

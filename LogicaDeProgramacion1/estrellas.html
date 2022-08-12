@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<h1>Programa calcular IMG</h1>
+
+<script>
+
+    function sartarLinea() {
+        document.write('<br>')
+    }
+
+    function imprimir(params) {
+        document.write(params)
+        sartarLinea();
+
+    }
+    for (let lineas = 1; lineas <= 3; lineas++) {
+        for (let columnas = 0; columnas <= 10; columnas++) {
+            document.write("*");
+        }
+        sartarLinea();
+    }
+
+</script>

@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+<script>
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    anho = 1930;
+
+    let limite = parseInt(prompt('Ingrese el año limite para calcular: '))
+
+    while (anho <= limite) {
+        imprimir('Hubo un mundial de la fifa en el año ' + anho);
+        anho += 4;
+    }
+</script>
